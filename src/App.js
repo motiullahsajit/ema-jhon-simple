@@ -14,8 +14,8 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 function App() {
   return (
     <>
-      <Header></Header>
       <Router>
+      <Header></Header>
         <Switch>
           <Route path='/shop'>
             <Shop></Shop>

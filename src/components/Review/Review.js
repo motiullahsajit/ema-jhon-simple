@@ -55,7 +55,9 @@ const Review = () => {
             </div>
             <div className="cart-container">
                 <Cart cart={cart}>
-                    <button onClick={handlePlaceOrder} className='main-button'>Place Order</button>
+                    {
+                        cart.length === 0 ? <button disabled onClick={handlePlaceOrder} className='main-button'>Place Order</button> : <button onClick={handlePlaceOrder} className='main-button'>Place Order</button>
+                    }
                 </Cart>
             </div>
         </div>

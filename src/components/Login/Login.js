@@ -13,7 +13,7 @@ function Login() {
         password: '',
         photo: '',
     })
-    console.log(user)
+    // console.log(user)
 
     initializeLoginFramework();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -86,7 +86,7 @@ function Login() {
     return (
         <div style={{ textAlign: 'center' }}>
             {
-                user.isSingnedIn && < div >
+                user?.isSingnedIn && < div >
                     <p > Welcome,{user.name} </p>
                     <p > Your email: {user.email} </p>
                     <img src={user.photo} alt="" />

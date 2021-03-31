@@ -11,7 +11,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useState({})
 
     useEffect(() => {
-        fetch('https://pacific-shelf-66043.herokuapp.com/product/'+ productKey)
+        fetch('https://ema-jhon-server.herokuapp.com/product/'+ productKey)
         .then(res => res.json())
         .then(data => setProduct(data));
     }, [productKey])

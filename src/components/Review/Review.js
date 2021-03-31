@@ -25,7 +25,7 @@ const Review = () => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart)
 
-        fetch('https://pacific-shelf-66043.herokuapp.com/productsByKeys', {
+        fetch('https://ema-jhon-server.herokuapp.com/productsByKeys', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

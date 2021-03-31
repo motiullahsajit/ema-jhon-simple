@@ -3,7 +3,7 @@ import React from 'react';
 const Inventory = () => {
     const handleAddProduct = () => {
         const product = {};
-        fetch('https://pacific-shelf-66043.herokuapp.com/addProduct', {
+        fetch('https://ema-jhon-server.herokuapp.com/addProduct', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

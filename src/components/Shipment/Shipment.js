@@ -11,7 +11,7 @@ const Shipment = () => {
         console.log(data)
         const savedCart = getDatabaseCart();
         const orderDetails = { ...loggedInUser, products: savedCart, shipment: data, orderTime: new Date() }
-        fetch('https://pacific-shelf-66043.herokuapp.com/addOrder', {
+        fetch('https://ema-jhon-server.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

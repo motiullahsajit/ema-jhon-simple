@@ -7,10 +7,11 @@ import './Shipment.css'
 const Shipment = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    console.log(loggedInUser)
     const onSubmit = data => {
         console.log(data)
         const savedCart = getDatabaseCart();
-        const orderDetails = { ...loggedInUser, products: savedCart, shipment: data, orderTime: new Date() }
+        const orderDetails = { userName: loggedInUser.displayName, userEmail: loggedInUser.email, products: savedCart, shipment: data, orderTime: new Date() }
         fetch('https://ema-jhon-server.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
@@ -18,13 +19,13 @@ const Shipment = () => {
             },
             body: JSON.stringify(orderDetails)
         })
-        .then(res => res.json())
-        .then(data=>{
-            if(data){
-                processOrder()
-                alert('Your oder placed successfuly')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    processOrder()
+                    alert('Your oder placed successfuly')
+                }
+            })
 
     };
     console.log(watch("example")); // watch input value by passing the name of it
